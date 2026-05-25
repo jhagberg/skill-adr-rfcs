@@ -35,7 +35,7 @@ For a deeper decision guide with examples, read `references/rfc-vs-adr.md`.
    - What changes for the codebase as a result?
 4. Read `assets/madr-template-full.md` (or `madr-template-minimal.md` if the user wants brevity) and draft the ADR.
 5. Show the draft. Wait for approval — never auto-create files.
-6. On approval, write `docs/decisions/NNNN-title.md` and update `docs/decisions/README.md` with a new row in the index table.
+6. On approval, write `docs/decisions/NNNN-kebab-case-title.md` and update `docs/decisions/README.md` with a new row in the index table.
 
 ### Draft an RFC
 

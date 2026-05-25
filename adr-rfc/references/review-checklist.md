@@ -8,7 +8,7 @@ what's strong, what's missing, and specific suggestions with line references.
 - [ ] **Title** is specific and names both the problem and the solution
 - [ ] **Context** is 2–5 sentences, not an essay
 - [ ] **At least 2 alternatives** are considered, each with explicit rejection reasons
-- [ ] **Decision** is one paragraph, present tense ("We use X")
+- [ ] **Decision Outcome** clearly states the chosen option and its justification
 - [ ] **Consequences** include both positive and negative impacts
 - [ ] **Confirmation** describes how compliance will be verified
 - [ ] **Supersession** — if this supersedes another ADR, the prior ADR's status

@@ -1,0 +1,8 @@
+# Eval workspace (test artifacts, not part of the skill)
+adr-rfc-workspace/
+
+# Research artifacts
+compass_artifact_*.md
+
+# Claude jobs
+.claude/

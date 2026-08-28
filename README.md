@@ -49,7 +49,7 @@ once without, save the output under
 python3 evals/grade_outputs.py <run-dir>
 ```
 
-Last result (iteration 3): with skill 29/29 assertions, without 9/29.
+Last result (iteration 4): with skill 29/29 assertions, without 9/29. Comment-leak check: 0/5 across five ADR-creation reps.
 
 ## Attribution and license
 

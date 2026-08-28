@@ -19,7 +19,7 @@ use an ADR instead.
 
 - Directory: `docs/rfcs/`
 - Filename: `NNNN-kebab-case-title.md` (4-digit, zero-padded)
-- Number space is independent from ADRs
+- Number space is independent from ADRs; start at `0001` (no `0000` meta-record)
 
 ## Lifecycle
 

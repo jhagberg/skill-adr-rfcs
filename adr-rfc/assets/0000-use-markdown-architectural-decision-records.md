@@ -1,3 +1,9 @@
+---
+status: "accepted"
+date: {YYYY-MM-DD when MADR was adopted}
+decision-makers: {list everyone involved in the decision}
+---
+
 # Use Markdown Architectural Decision Records
 
 ## Context and Problem Statement

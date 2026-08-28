@@ -18,9 +18,10 @@ what's strong, what's missing, and specific suggestions with line references.
 - [ ] **Index updated** — `docs/decisions/README.md` has a row for this ADR
 - [ ] **Frontmatter complete** (full template only) — `decision-makers` is
       populated (not empty), `consulted` and `informed` are present (can be
-      empty if genuinely N/A). Skip this check for minimal-template ADRs.
-- [ ] **Date** in frontmatter matches when the decision was made (not when the
-      file was created, if backfilling)
+      empty if genuinely N/A). Skip this check only when the ADR has no
+      frontmatter block at all (minimal template).
+- [ ] **Date** (when frontmatter is present) matches when the decision was
+      made (not when the file was created, if backfilling)
 - [ ] **No jargon without context** — a new team member can understand the
       decision without external documents
 

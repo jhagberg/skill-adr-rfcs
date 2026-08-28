@@ -26,7 +26,7 @@ For a deeper decision guide with examples, read `references/rfc-vs-adr.md`.
 
 ### Write an ADR
 
-1. Check whether `docs/decisions/` exists. If not, ask permission to create it with a `README.md` (from `assets/decisions-README.md`) and ADR-0000 (copy `assets/0000-use-markdown-architectural-decision-records.md` as-is and add its index row).
+1. Check whether `docs/decisions/` exists. If not, ask permission to create it with a `README.md` (from `assets/decisions-README.md`) and ADR-0000 (copy `assets/0000-use-markdown-architectural-decision-records.md`, fill its frontmatter placeholders, and add its index row).
 2. List existing ADRs to find the next sequence number. Filenames follow `NNNN-kebab-case-title.md` (4-digit, zero-padded). `0000` is reserved for "Use MADR"; start at `0001`.
 3. If context is thin, ask the user:
    - What problem are you solving?
@@ -40,7 +40,7 @@ For a deeper decision guide with examples, read `references/rfc-vs-adr.md`.
 ### Draft an RFC
 
 1. Confirm RFC is the right tool — apply the decision tree above.
-2. Check whether `docs/rfcs/` exists. If not, ask permission to create it with a `README.md` (use `assets/rfcs-README.md` as the template). RFC numbering is independent from ADRs.
+2. Check whether `docs/rfcs/` exists. If not, ask permission to create it with a `README.md` (use `assets/rfcs-README.md` as the template). RFC numbering is independent from ADRs; start at `0001`.
 3. Read `assets/rfc-template.md` and draft the RFC. Frontmatter status: `draft`.
 4. Show the draft, get approval, write the file.
 5. Update `docs/rfcs/README.md` with a new row in the index table.
@@ -62,16 +62,17 @@ For RFC lifecycle details, read `references/rfc-guide.md`.
 
 ### Update an ADR's status
 
-1. Edit the frontmatter: set `status` (e.g., `"accepted"`, `"deprecated"`, `"superseded by ADR-0042"`) and bump `date`.
+1. Edit the frontmatter: set `status` (e.g., `"accepted"`, `"deprecated"`, `"superseded by ADR-0042"`) and bump `date` (RFCs use `updated` instead).
 2. Update the ADR's row in `docs/decisions/README.md`.
 3. If deprecating or superseding, follow `references/superseding-and-linking.md` for the body links and the other ADR's status.
 
 ### Graduate an RFC to ADR(s)
 
-When an RFC reaches `accepted` status:
-1. Create one or more ADRs capturing the committed decisions.
-2. Update the RFC's `related-adrs` frontmatter and `Outcome` section with links.
-3. Each ADR's "More Information" section links back to the RFC.
+When an RFC is accepted:
+1. Set the RFC's `status` to `accepted` and bump `updated`; update its row in `docs/rfcs/README.md`.
+2. Create one or more ADRs capturing the committed decisions.
+3. Update the RFC's `related-adrs` frontmatter and `Outcome` section with links.
+4. Each ADR's "More Information" section links back to the RFC.
 
 For supersession and cross-linking mechanics, read `references/superseding-and-linking.md`.
 

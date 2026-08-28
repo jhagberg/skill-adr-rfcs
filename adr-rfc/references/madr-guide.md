@@ -16,7 +16,8 @@ Filename: `NNNN-kebab-case-title.md`
 - `NNNN` is a 4-digit zero-padded sequence number.
 - `0000` is reserved by convention for "Use MADR" (the meta-ADR explaining why
   the project uses this format). `assets/0000-use-markdown-architectural-decision-records.md`
-  is upstream's own copy — offer it when bootstrapping `docs/decisions/`. Start
+  is upstream's own record with a frontmatter block added so the index row can
+  be filled — offer it when bootstrapping `docs/decisions/`. Start
   actual project decisions at `0001`.
 - To find the next number: list the directory, sort numerically, take max + 1.
   Show the proposed number to the user before creating the file.

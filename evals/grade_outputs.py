@@ -203,7 +203,7 @@ def grade_adr_review(content):
         "evidence": f"References brief/thin context: {flags_context}"
     })
     # 2. Flags single option
-    flags_single = bool(re.search(r"(only one option|single.?option|one option listed|only.*redis|single.*listed|only.*considered)", cl))
+    flags_single = bool(re.search(r"(only one option|single.?option|one option listed|only.*redis|single.*listed|only.*considered|single entry|one option is not|no alternatives|fewer than (two|2))", cl))
     results.append({
         "text": "Flags that only 1 option is considered (needs at least 2 alternatives)",
         "passed": flags_single,
@@ -260,11 +260,10 @@ def main():
     # ADR creation
     for variant in ["with_skill", "without_skill"]:
         d = f"{BASE}/adr-creation-{variant}/outputs"
-        files = os.listdir(d)
-        md_files = [f for f in files if f.endswith(".md")]
+        md_files = sorted(os.path.join(r, f) for r, _, fs in os.walk(d) for f in fs if f.endswith(".md"))
         if md_files:
-            fname = md_files[0]
-            content = read_file(os.path.join(d, fname))
+            fname = os.path.basename(md_files[0])
+            content = read_file(md_files[0])
             results = grade_adr_creation(content, fname)
             key = f"adr-creation-{variant}"
             all_results[key] = results
@@ -274,11 +273,10 @@ def main():
     # RFC drafting
     for variant in ["with_skill", "without_skill"]:
         d = f"{BASE}/rfc-drafting-{variant}/outputs"
-        files = os.listdir(d)
-        md_files = [f for f in files if f.endswith(".md")]
+        md_files = sorted(os.path.join(r, f) for r, _, fs in os.walk(d) for f in fs if f.endswith(".md"))
         if md_files:
-            fname = md_files[0]
-            content = read_file(os.path.join(d, fname))
+            fname = os.path.basename(md_files[0])
+            content = read_file(md_files[0])
             results = grade_rfc_drafting(content, fname)
             key = f"rfc-drafting-{variant}"
             all_results[key] = results

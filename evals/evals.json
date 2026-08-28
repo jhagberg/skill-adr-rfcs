@@ -1,0 +1,26 @@
+{
+  "skill_name": "adr-rfc",
+  "evals": [
+    {
+      "id": 0,
+      "name": "adr-creation",
+      "prompt": "We've decided to use PostgreSQL instead of MySQL for our new user service. The main reasons are better JSON support, PostGIS for location features we'll need later, and the team's existing expertise. MySQL was considered but lacks native JSON operators. SQLite was too limited for production. Can you write an ADR for this?",
+      "expected_output": "A well-structured MADR 4.0 ADR with frontmatter (status, date, decision-makers), context section, at least 3 considered options (PostgreSQL, MySQL, SQLite), decision outcome with justification, consequences (good and bad), and pros/cons for each option. No template guidance comments (<!-- -->) left in the file.",
+      "files": []
+    },
+    {
+      "id": 1,
+      "name": "rfc-drafting",
+      "prompt": "We need to redesign how authentication works across our three apps - the React SPA, the mobile app (React Native), and the REST API. Right now each has its own auth implementation and it's becoming a maintenance nightmare with security patches applied inconsistently. We're considering centralizing to a shared auth service but there are several approaches: build our own OAuth2 provider, use Auth0, use Firebase Auth, or deploy Keycloak. This affects the backend team, frontend team, and mobile team. Multiple stakeholders need to weigh in before we commit. Can you help us think through this and draft something?",
+      "expected_output": "An RFC (not an ADR) since the decision is open and cross-team. Should use the RFC template with frontmatter (status: draft), motivation with concrete use cases, guide-level explanation, detailed design considerations, drawbacks, rationale/alternatives covering all 4 options plus build-vs-buy tradeoffs, prior art, and unresolved questions.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "name": "adr-review",
+      "prompt": "Can you review this ADR for me? It's at evals/sample-adr-for-review.md",
+      "expected_output": "A structured review identifying the ADR's weaknesses: too-brief context (should be 2-5 sentences), only one considered option (need at least 2 with rejection reasons), no decision drivers, missing confirmation section, consequences are only positive (missing negative), justification is vague ('it's the best'), missing decision-makers in frontmatter, and index not mentioned.",
+      "files": ["evals/sample-adr-for-review.md"]
+    }
+  ]
+}

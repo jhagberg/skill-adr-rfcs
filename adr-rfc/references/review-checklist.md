@@ -10,7 +10,9 @@ what's strong, what's missing, and specific suggestions with line references.
 - [ ] **At least 2 alternatives** are considered, each with explicit rejection reasons
 - [ ] **Decision Outcome** clearly states the chosen option and its justification
 - [ ] **Consequences** include both positive and negative impacts
-- [ ] **Confirmation** describes how compliance will be verified
+- [ ] **Confirmation** describes how compliance will be verified — required
+      when the decision needs enforcement (e.g., "use library X" → lint rule or
+      review gate); otherwise optional per MADR and absent from minimal-template ADRs
 - [ ] **Supersession** — if this supersedes another ADR, the prior ADR's status
       is updated to `superseded by ADR-NNNN` with a link in its body
 - [ ] **Index updated** — `docs/decisions/README.md` has a row for this ADR

@@ -5,21 +5,19 @@ Use this when it's unclear whether a document should be an ADR or an RFC.
 ## Quick decision tree
 
 ```
-Is the decision already made?
-├── Yes → ADR (status: accepted)
+Is it trivial (variable name, log format, single-file refactor)?
+├── Yes → No document. Use a code comment or PR description.
 └── No
-    ├── Is it genuinely open with multiple viable options?
-    │   ├── Yes
-    │   │   ├── Does it impact people outside the immediate team?
-    │   │   │   ├── Yes → RFC
-    │   │   │   └── No → ADR (status: proposed)
-    │   │   └── Is the design space large enough to warrant structured exploration?
-    │   │       ├── Yes → RFC
-    │   │       └── No → ADR (status: proposed)
-    │   └── No (one option is clearly right, just needs ratification)
-    │       └── ADR (status: proposed)
-    └── Is it trivial (variable name, log format, single-file refactor)?
-        └── No document. Use a code comment or PR description.
+    └── Is the decision already made?
+        ├── Yes → ADR (status: accepted)
+        └── No
+            └── Are there multiple genuinely viable options?
+                ├── No (one is clearly right, just needs ratification) → ADR (status: proposed)
+                └── Yes
+                    └── Does it impact people outside the immediate team,
+                        OR is the design space large enough to need structured exploration?
+                        ├── Yes → RFC
+                        └── No → ADR (status: proposed)
 ```
 
 ## The fundamental distinction

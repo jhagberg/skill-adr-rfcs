@@ -29,9 +29,9 @@ When a new decision replaces a previous one:
 ## Superseding an RFC
 
 Same pattern:
-- New RFC's frontmatter: `status: superseded` is not used on the new one — use
-  `draft` or `discussion`.
-- Old RFC's frontmatter: `status: superseded` and add a link forward in the body.
+- New RFC: normal lifecycle (`draft` → `discussion`); link back to the old RFC
+  in its Motivation or Prior art section.
+- Old RFC: set `status: superseded` and add a link forward in the body.
 
 ## Cross-linking ADRs and RFCs
 

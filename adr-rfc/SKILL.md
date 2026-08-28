@@ -26,14 +26,14 @@ For a deeper decision guide with examples, read `references/rfc-vs-adr.md`.
 
 ### Write an ADR
 
-1. Check whether `docs/decisions/` exists. If not, ask permission to create it with a `README.md` (use `assets/decisions-README.md` as the template).
+1. Check whether `docs/decisions/` exists. If not, ask permission to create it with a `README.md` (from `assets/decisions-README.md`) and ADR-0000 (copy `assets/0000-use-markdown-architectural-decision-records.md` as-is and add its index row).
 2. List existing ADRs to find the next sequence number. Filenames follow `NNNN-kebab-case-title.md` (4-digit, zero-padded). `0000` is reserved for "Use MADR"; start at `0001`.
 3. If context is thin, ask the user:
    - What problem are you solving?
    - What options are on the table?
    - Which are you choosing and why?
    - What changes for the codebase as a result?
-4. Read `assets/madr-template-full.md` (or `madr-template-minimal.md` if the user wants brevity) and draft the ADR.
+4. Read `assets/madr-template-full.md` (or `assets/madr-template-minimal.md` if the user wants brevity) and draft the ADR. Sections preceded by an optional-element comment may be dropped when they add nothing; strip all `<!-- … -->` guidance comments from the final file.
 5. Show the draft. Wait for approval — never auto-create files.
 6. On approval, write `docs/decisions/NNNN-kebab-case-title.md` and update `docs/decisions/README.md` with a new row in the index table.
 
@@ -56,9 +56,15 @@ For RFC lifecycle details, read `references/rfc-guide.md`.
 
 ### Search decisions ("what did we decide about X?")
 
-1. Search `docs/decisions/` (and `docs/rfcs/` if it exists) for matches.
+1. Search `docs/decisions/`, plus `docs/rfcs/` and legacy `docs/adr/` if they exist, for matches.
 2. Return: title, file path, status, date, decision-makers (if present), Decision Outcome, and a Consequences summary. Flag any superseded or deprecated results.
 3. If no match, offer to record one.
+
+### Update an ADR's status
+
+1. Edit the frontmatter: set `status` (e.g., `"accepted"`, `"deprecated"`, `"superseded by ADR-0042"`) and bump `date`.
+2. Update the ADR's row in `docs/decisions/README.md`.
+3. If deprecating or superseding, follow `references/superseding-and-linking.md` for the body links and the other ADR's status.
 
 ### Graduate an RFC to ADR(s)
 

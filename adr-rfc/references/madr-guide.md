@@ -15,7 +15,9 @@ Filename: `NNNN-kebab-case-title.md`
 
 - `NNNN` is a 4-digit zero-padded sequence number.
 - `0000` is reserved by convention for "Use MADR" (the meta-ADR explaining why
-  the project uses this format). Start actual project decisions at `0001`.
+  the project uses this format). `assets/0000-use-markdown-architectural-decision-records.md`
+  is upstream's own copy — offer it when bootstrapping `docs/decisions/`. Start
+  actual project decisions at `0001`.
 - To find the next number: list the directory, sort numerically, take max + 1.
   Show the proposed number to the user before creating the file.
 
@@ -30,18 +32,24 @@ MADR 4.0 ships four template variants:
 | Full (bare) | All sections | No |
 | Minimal (bare) | Mandatory only | No |
 
-This skill bundles the two annotated forms in `assets/`. Use the full template
-by default; offer minimal when the user explicitly wants brevity.
+This skill bundles the two annotated forms in `assets/`, copied from the
+upstream 4.0.0 tag (<https://github.com/adr/madr/tree/4.0.0/template>). The
+only deviations are three upstream typo fixes in the full template (closing
+brace in the `status` placeholder, "Not that" → "Note that", a duplicated
+"this decision"). Sections preceded by
+`<!-- This is an optional element. Feel free to remove. -->` — and the entire
+frontmatter block — are optional per MADR. Use the full template by default;
+offer minimal when the user explicitly wants brevity.
 
 ## Full template section order
 
-1. **YAML frontmatter** — `status`, `date`, `decision-makers`, `consulted`, `informed`
+1. **YAML frontmatter** — `status`, `date`, `decision-makers`, `consulted`, `informed` *(optional per MADR; this skill expects them when using the full template)*
 2. **Title** — as an H1, descriptive of the decision
 3. **Context and Problem Statement** — 2–5 sentences describing the problem
 4. **Decision Drivers** *(optional)* — bullet list of forces influencing the decision
 5. **Considered Options** — bullet list of alternatives
 6. **Decision Outcome** — which option was chosen, with justification
-7. **Consequences** — nested under Decision Outcome; Good and Bad bullets
+7. **Consequences** *(optional, but nearly always included)* — nested under Decision Outcome; Good and Bad bullets
 8. **Confirmation** *(optional but common)* — how compliance will be verified
 9. **Pros and Cons of the Options** *(optional)* — detailed analysis per option
 10. **More Information** *(optional)* — links, meeting notes, related ADRs/RFCs
@@ -52,6 +60,7 @@ by default; offer minimal when the user explicitly wants brevity.
 2. **Context and Problem Statement**
 3. **Considered Options**
 4. **Decision Outcome**
+5. **Consequences** *(optional)* — nested under Decision Outcome
 
 No frontmatter, no other sections.
 
